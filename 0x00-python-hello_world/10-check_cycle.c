@@ -1,4 +1,4 @@
-#include "list.h"
+#include "lists.h"
 /**
  * check_cycle - checks if the linked list is a loop
  * @willy: A struct pointing to a list
@@ -10,7 +10,7 @@ int check_cycle(listint_t *willy)
 	/*Will increment by 1 */
 	listint_t *ptr_2 = willy;
 	/*Will increment by 2 */
-	if (willy != NULL)
+	if (!willy)
 		return (0);
 	while (ptr_2 && ptr_2->next)
 	{
