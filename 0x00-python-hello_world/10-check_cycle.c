@@ -1,7 +1,7 @@
 #include "list.h"
 /**
  * check_cycle - checks if the linked list is a loop
- * @willy - A struct pointing to a list
+ * @willy: A struct pointing to a list
  * Return: 0
  */
 int check_cycle(listint_t *willy)
