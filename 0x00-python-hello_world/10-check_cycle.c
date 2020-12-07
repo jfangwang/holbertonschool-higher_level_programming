@@ -12,6 +12,8 @@ int check_cycle(listint_t *willy)
 	/*Will increment by 2 */
 	if (!willy)
 		return (0);
+	if (ptr_1 == ptr_1->next)
+		return (0);
 	while (ptr_2 && ptr_2->next)
 	{
 		ptr_1 = ptr_1->next;
