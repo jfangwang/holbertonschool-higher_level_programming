@@ -10,7 +10,7 @@ int check_cycle(listint_t *willy)
 	/*Will increment by 1 */
 	listint_t *ptr_2 = willy;
 	/*Will increment by 2 */
-	if (list != NULL)
+	if (willy != NULL)
 		return (0);
 	while (ptr_2 && ptr_2->next)
 	{
@@ -19,5 +19,5 @@ int check_cycle(listint_t *willy)
 		if (ptr_1 == ptr_2)
 			return (1);
 	}
-	return (0)
+	return (0);
 }
