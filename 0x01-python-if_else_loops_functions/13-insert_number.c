@@ -20,7 +20,7 @@ listint_t *insert_node(listint_t **head, int number)
     if (*head == NULL)
     {
         *head = smallWilly;
-        smallWilly->next = step
+        smallWilly->next = NULL;
         return (smallWilly);
     }
     /* if there is one node in the list */
@@ -34,5 +34,6 @@ listint_t *insert_node(listint_t **head, int number)
     while (bigWilly->next && bigWilly->next->n < number)
         bigWilly = bigWilly->next;
     smallWilly->next = bigWilly->next;
+    bigWilly->next = smallWilly;
     
 }
