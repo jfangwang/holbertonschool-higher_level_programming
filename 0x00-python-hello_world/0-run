@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 !#/usr/bin/python3
 print("Holberton")
+=======
+#!/bin/bash
+python3 $PYFILE
+>>>>>>> 00132f90234a62ad624ebfa77cd346248210a7b4
