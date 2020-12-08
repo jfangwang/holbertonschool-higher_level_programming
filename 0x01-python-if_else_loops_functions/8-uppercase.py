@@ -6,4 +6,4 @@ def uppercase(str):
             willy += chr(a)
         else:
             willy += a
-    print(willy)
+    print("{}".format(willy))
