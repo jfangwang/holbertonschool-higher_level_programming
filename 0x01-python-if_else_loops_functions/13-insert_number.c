@@ -35,5 +35,5 @@ listint_t *insert_node(listint_t **head, int number)
         bigWilly = bigWilly->next;
     smallWilly->next = bigWilly->next;
     bigWilly->next = smallWilly;
-    
+
 }
