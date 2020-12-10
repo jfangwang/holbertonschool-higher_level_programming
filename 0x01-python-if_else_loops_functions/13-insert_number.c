@@ -1,15 +1,16 @@
 #include "lists.h"
 /**
  * insert_node - inserts given node in sorted list
- * head: head of list
- * number: value of node
+ * @head: head of list
+ * @number: value of node
  * Return: Node Address or null
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-    listint_t *bigWilly = *head;
-    listint_t *smallWilly = NULL;
+	listint_t *bigWilly = *head;
+	listint_t *smallWilly = NULL;
 
+<<<<<<< HEAD
     smallWilly = malloc(sizeof(listint_t));
     if (smallWilly == NULL)
         return (NULL);
@@ -36,4 +37,32 @@ listint_t *insert_node(listint_t **head, int number)
     smallWilly->next = bigWilly->next;
     bigWilly->next = smallWilly;
 
+=======
+	smallWilly = malloc(sizeof(listint_t));
+	if (smallWilly == NULL)
+		return (NULL);
+	/* Storing Numbers in smallWily */
+	smallWilly->n = number;
+	smallWilly->next = NULL;
+	/*If there is nothing in list */
+	if (*head == NULL)
+	{
+		*head = smallWilly;
+		smallWilly->next = NULL;
+		return (smallWilly);
+	}
+	/* if there is one node in the list */
+	if (smallWilly->n < bigWilly->n)
+	{
+		*head = smallWilly;
+		smallWilly->next = bigWilly;
+		return (smallWilly);
+	}
+	/* if there is more than 1 in the list */
+	while (bigWilly->next && bigWilly->next->n < number)
+		bigWilly = bigWilly->next;
+	smallWilly->next = bigWilly->next;
+	bigWilly->next = smallWilly;
+	return (smallWilly);
+>>>>>>> cf323bec70bc8b84a5cf083f0725be3cd0e2828e
 }
