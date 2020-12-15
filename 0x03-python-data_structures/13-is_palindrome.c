@@ -7,7 +7,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *beg = NULL, *end = NULL;
+	listint_t *beg = NULL;
 	unsigned int length = 0, a = 0;
 
 	if (head == NULL)
