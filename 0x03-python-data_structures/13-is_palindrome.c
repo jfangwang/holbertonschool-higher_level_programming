@@ -18,6 +18,7 @@ int is_palindrome(listint_t **head)
 
 	for (a = 0; a < length; a += 2)
 	{
+		
 		if (beg[a].n != end[(length * 2) - 2 - a].n)
 			return (0);
 	}
@@ -38,27 +39,4 @@ size_t len(listint_t *h)
 		count++;
 	}
 	return (count);
-}
-/**
- * getindex - Gets node of given index
- * @head: head of list
- * @idx: index
- * Return: node at given index
- */
-listint_t *getindex(listint_t *head, unsigned int idx)
-{
-	listint_t *cur = head;
-	unsigned int count = 0;
-
-	if (head != NULL)
-	{
-		while (cur != NULL)
-		{
-			if (count == idx)
-				return (cur);
-			cur = cur->next;
-			count++;
-		}
-	}
-	return (NULL);
 }
