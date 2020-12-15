@@ -7,19 +7,17 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *beg = NULL, *end = NULL;
+	listint_t *ptr = NULL;
 	unsigned int length = 0, a = 0;
 
-	if (head == NULL)
+	if (*head == NULL)
 		return (0);
-	beg = *head;
-	end = *head;
+	ptr = *head;
 	length = len(beg);
-
 	for (a = 0; a < length; a += 2)
 	{
 		
-		if (beg[a].n != end[(length * 2) - 2 - a].n)
+		if (ptr[a].n != ptr[(length * 2) - 2 - a].n)
 			return (0);
 	}
 	return (1);
@@ -27,7 +25,7 @@ int is_palindrome(listint_t **head)
 /**
  * len - Checks for len of linked list
  * @h: head of list
- * Return: length
+ * Return: int
  */
 size_t len(listint_t *h)
 {
