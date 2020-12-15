@@ -15,7 +15,6 @@ int is_palindrome(listint_t **head)
 	beg = *head;
 	end = *head;
 	length = len(beg);
-	printf("length %d\n", length);
 
 	for (a = 0; a < length; a += 2)
 	{
