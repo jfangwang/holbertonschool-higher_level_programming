@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash/python3
 def add_tuple(tuple_a=(), tuple_b=()):
     tuple_a = check(tuple_a)
     tuple_b = check(tuple_b)
