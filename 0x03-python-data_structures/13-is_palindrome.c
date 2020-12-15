@@ -13,10 +13,9 @@ int is_palindrome(listint_t **head)
 	if (*head == NULL)
 		return (0);
 	ptr = *head;
-	length = len(beg);
+	length = len(ptr);
 	for (a = 0; a < length; a += 2)
 	{
-		
 		if (ptr[a].n != ptr[(length * 2) - 2 - a].n)
 			return (0);
 	}
