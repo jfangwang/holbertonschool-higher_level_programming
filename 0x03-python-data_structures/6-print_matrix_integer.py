@@ -5,7 +5,7 @@ def print_matrix_integer(matrix=[[]]):
             count = 0
             for adam in benny:
                     if count == len(benny) - 1:
-                        print("{:d}".format(adam))
+                        print("{:d}".format(adam), end='')
                     else:
                         print("{:d}".format(adam), end=' ')
                     count += 1
