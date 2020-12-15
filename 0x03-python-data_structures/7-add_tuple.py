@@ -12,4 +12,5 @@ def check(tup=()):
         tup = (0, 0)
     elif len(tup) > 2:
         tup = (tup[0], tup[1])
+
     return tup
