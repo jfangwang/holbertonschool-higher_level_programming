@@ -13,27 +13,13 @@ int is_palindrome(listint_t **head)
 	if (head == NULL)
 		return (0);
 	ptr = *head;
-	length = len(ptr);
+	for (length = 0; ptr != NULL; length++)
+		ptr = ptr->next;
+	ptr = *head;
 	for (a = 0; a < length; a += 2)
 	{
 		if (ptr[a].n != ptr[(length * 2) - 2 - a].n)
 			return (0);
 	}
 	return (1);
-}
-/**
- * len - Checks for len of linked list
- * @h: head of list
- * Return: int
- */
-size_t len(listint_t *h)
-{
-	int count = 0;
-
-	while (h != NULL)
-	{
-		h = h->next;
-		count++;
-	}
-	return (count);
 }
