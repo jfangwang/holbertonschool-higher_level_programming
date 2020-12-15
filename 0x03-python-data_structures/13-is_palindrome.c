@@ -7,19 +7,19 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *beg = NULL;
+	listint_t *beg = NULL, *end = NULL;
 	unsigned int length = 0, a = 0;
 
 	if (head == NULL)
 		return (0);
-	if (*head == NULL)
-		return (1);
 	beg = *head;
+	end = *head;
 	length = len(beg);
+	printf("length %d\n", length);
 
-	for (a = 0; a <= length / 2; a++)
+	for (a = 0; a < length; a += 2)
 	{
-		if (getindex(*head, a) != getindex(*head, length - 1 - a))
+		if (beg[a].n != end[(length * 2) - 2 - a].n)
 			return (0);
 	}
 	return (1);
@@ -33,7 +33,7 @@ size_t len(listint_t *h)
 {
 	int count = 0;
 
-	while (!h)
+	while (h != NULL)
 	{
 		h = h->next;
 		count++;
