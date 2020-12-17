@@ -5,7 +5,7 @@ def roman_to_int(roman_string):
     # 3: "XXX" There can't be more than 3 of the same symbol in a row
     # Realized checker will input valid numerals
     if not roman_string:
-        return None
+        return 0
     sum = 0
     next = 0
     cur = 0
