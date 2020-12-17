@@ -5,6 +5,7 @@ def best_score(a_dictionary):
     if not a_dictionary:
         return None
     for a, b in a_dictionary.items():
-        if b > high:
+        if b >= high:
+            high = b
             name = a
     return name
