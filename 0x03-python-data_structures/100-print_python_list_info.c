@@ -1,5 +1,7 @@
-#include "/usr/include/python3.4/Python.h"
+#include <Python.h>
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
 *print_python_list_info - prints the size of list, space allocated,
 *and each element in list.
@@ -13,5 +15,6 @@ void print_python_list_info(PyObject *p)
 
 	length = PyList_Size(p);
 	printf("[*] Size of the Python List = %d\n", length);
-	printf("[*] Allocated = 2\n");
+	printf("[*] Allocated = 2\n", PySize(p));
+	return;
 }
