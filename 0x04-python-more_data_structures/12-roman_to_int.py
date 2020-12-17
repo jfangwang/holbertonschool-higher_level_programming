@@ -13,8 +13,11 @@ def roman_to_int(roman_string):
     sum = 0
     next = 0
     cur = 0
-    for ind in range(0, len(roman_string)):
+    ind = 0
+    while (ind < len(roman_string)):
         cur = convert(roman_string[ind])
+        # print("Cur: {}, Sum: {}, Ind: {}".format(cur,
+        # convert(roman_string[ind + 1]), ind))
         # Check if there is another letter
         if ind + 1 < len(roman_string):
             next = convert(roman_string[ind + 1])
@@ -25,10 +28,10 @@ def roman_to_int(roman_string):
         # check #2
         if next > cur:
             sum += next - cur
-            if ind + 2 >= len(roman_string):
-                return sum
+            if ind + 2 < len(roman_string):
+                ind += 2
             else:
-                ind += 1
+                return sum
         else:
             sum += convert(roman_string[ind])
             ind += 1
