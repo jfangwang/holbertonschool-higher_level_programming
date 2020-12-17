@@ -4,7 +4,8 @@ def roman_to_int(roman_string):
     # 2: "IV" If the 2nd symbol is greater than the 1st, subtract 2nd from 1st
     # 3: "XXX" There can't be more than 3 of the same symbol in a row
     # Realized checker will input valid numerals
-    if not roman_string:
+    res = isinstance(test_string, str)
+    if not roman_string or res is False:
         return 0
     sum = 0
     next = 0
