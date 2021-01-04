@@ -7,7 +7,7 @@ def safe_print_list(my_list=[], x=0):
             print("{:d}".format(my_list[a]), end=' ')
             count += 1
         print()
-    except (TypeError, AttributeError):
+    except TypeError:
         pass
     finally:
         return count
