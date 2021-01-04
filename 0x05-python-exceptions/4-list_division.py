@@ -3,7 +3,6 @@ def list_division(my_list_1, my_list_2, list_length):
     output = []
     count = 0
 
-
     for a in range(list_length):
         try:
             output.append(my_list_1[count] / my_list_2[count])
