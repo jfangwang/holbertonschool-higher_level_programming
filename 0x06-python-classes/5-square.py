@@ -80,6 +80,9 @@ class Square:
     def my_print(self):
         length = int(self.__size)
 
+        if length == 0
+            print()
+            return None
         for a in range(length):
             for b in range(length):
                 print('#', end='')
