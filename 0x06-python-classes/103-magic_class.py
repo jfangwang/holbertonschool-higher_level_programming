@@ -12,11 +12,10 @@ class MagicClass:
             raise TypeError('readius must be a number')
         self.__radius = radius
     
-    dis.dis(__init__)
+    
     def area(self):
         return self.__radius ** 2 * math.pi
 
-    dis.dis(area)
+
     def circumference(self):
         return 2 * math.pi * self.__radius
-    dis.dis(circumference) 
