@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import dis
 import math
 
 
 class MagicClass:
-    """ Filler Comment
+    """
+    Filler Comment
     """
     def __init__(self, radius):
         self.__radius = radius
