@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+import dis
 import math
 
 
 class MagicClass:
     """ Filler Comment
-
     """
     def __init__(self, radius):
         self.__radius = 0
@@ -19,3 +19,6 @@ class MagicClass:
         """
     def circumference(self):
         return 2 * math.pi * self.__radius
+    dis.dis(__init__)
+    dis.dis(area)
+    dis.dis(circumference)
