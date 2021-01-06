@@ -65,7 +65,6 @@ class Square:
         """Returns String"""
         sqr = ""
         if self.__size == 0:
-            sqr += "\n"
             return sqr
         else:
             for a in range(self.__position[1]):
