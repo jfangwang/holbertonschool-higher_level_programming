@@ -97,10 +97,6 @@ class Square:
 
     The area method returns the current square area
 
-    Rasies:
-        TypeError: If size is not an int
-        ValueError: If size < 0
-
     Returns:
         int: returns the sqaure area
 
@@ -119,7 +115,7 @@ class Square:
             print()
             return None
         for a in range(self.__position[1]):
-            print()
+            print('')
         for a in range(length):
             for c in range(self.__position[0]):
                 print(' ', end='')
