@@ -107,8 +107,9 @@ class Square:
     def my_print(self):
         length = int(self.__size)
 
-        for a in range(self.__position[1]):
-            print()
+        if self.__position[1] < 0:
+            for a in range(self.__position[1]):
+                print()
         if length == 0:
             print()
             return None
