@@ -116,6 +116,8 @@ class Square:
         if length == 0:
             print("")
             return None
+        for a in range(self.__position[1]):
+            print(" ", end='')
         for a in range(length):
             for b in range(self.__position[0]):
                 print(" ", end='')
