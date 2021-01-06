@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 import math
+"""import"""
 
 
 class MagicClass:
@@ -10,7 +10,7 @@ class MagicClass:
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be a number')
-        self.__radius = None
+            self.__radius = None
 
     def area(self):
         """area"""
