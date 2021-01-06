@@ -4,13 +4,13 @@ import math
 
 
 class MagicClass:
-    
+    """ Magic Class """ 
     def __init__(self, radius):
         """Initializing"""
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be a number')
-            self.__radius = None
+        self.__radius = radius
 
     def area(self):
         """area"""
