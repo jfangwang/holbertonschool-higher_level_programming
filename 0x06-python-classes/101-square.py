@@ -60,6 +60,21 @@ class Square:
                 for b in range(self.__size):
                     print('#', end="")
                 print("")
+
     def __str__(self):
         """Returns String"""
-
+        sqr = ""
+        if self.__size == 0:
+            sqr += "\n"
+            return sqr
+        else:
+            for a in range(self.__position[1]):
+                sqr += "\n"
+            for a in range(self.__size):
+                for b in range(self.__position[0]):
+                    sqr += " "
+                for b in range(self.__size):
+                    sqr += "#"
+                if a < self.__size - 1:
+                    sqr += "\n"
+        return sqr
