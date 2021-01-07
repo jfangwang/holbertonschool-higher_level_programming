@@ -2,7 +2,12 @@
 class Square:
     """Class Square"""
     def __init__(self, size=0):
-        """init"""
+        """
+        init square
+
+        Args:
+            size: the size
+        """
         self.__size = size
 
     @property
@@ -20,7 +25,12 @@ class Square:
         self.__size = value
 
     def area(self):
-        """area"""
+        """
+        area
+
+        Returns:
+            Returns the area
+        """
         return self.__size ** 2
 
     def __lt__(self, value):
