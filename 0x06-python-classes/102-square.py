@@ -1,9 +1,17 @@
 #!/usr/bin/python3
+
+
+"""
+Class Square
+"""
 class Square:
-    """Class Square"""
+    """
+    Class Square
+    """
     def __init__(self, size=0):
-        """
-        init square
+        """__init__ method
+
+        Intializes everything
 
         Args:
             size: the size
@@ -12,12 +20,23 @@ class Square:
 
     @property
     def size(self):
-        """Getter"""
+        """
+        Getter
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Setter"""
+        """
+        Setter
+
+        Attributes:
+            value (int): A private value defining the square
+
+        Rasies:
+            TypeError: If size is not an int
+            ValueError: If size < 0
+        """
         if type(value) is not int:
             raise TypeError("size must be a number")
         elif value < 0:
@@ -34,25 +53,37 @@ class Square:
         return self.__size ** 2
 
     def __lt__(self, value):
-        """Less Than"""
+        """
+        Less Than
+        """
         return self.size < value.size
 
     def __le__(self, value):
-        """Less Than Equal"""
+        """
+        Less Than Equal
+        """
         return self.size <= value.size
 
     def __eq__(self, value):
-        """Equal"""
+        """
+        Equal
+        """
         return self.size == value.size
 
     def __ne__(self, value):
-        """Not Equal"""
+        """
+        Not Equal
+        """
         return self.size != value.size
 
     def __gt__(self, value):
-        """Greater Than"""
+        """
+        Greater Than
+        """
         return self.size > value.size
 
     def __ge__(self, value):
-        """Greater Than Equal"""
+        """
+        Greater Than Equal
+        """
         return self.size >= value.size
