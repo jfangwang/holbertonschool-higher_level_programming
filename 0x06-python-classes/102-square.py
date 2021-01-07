@@ -4,6 +4,8 @@
 """
 Class Square
 """
+
+
 class Square:
     """
     Class Square
