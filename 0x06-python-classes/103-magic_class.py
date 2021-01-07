@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import math
-"""strting"""
+import dis
 
 
 class MagicClass:
