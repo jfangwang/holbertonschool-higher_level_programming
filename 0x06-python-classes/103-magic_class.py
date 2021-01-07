@@ -4,7 +4,7 @@ import dis
 
 
 class MagicClass:
-    """ Magic Class """ 
+    """ Magic Class"""
     def __init__(self, radius):
         """__init__"""
         self.__radius = 0
