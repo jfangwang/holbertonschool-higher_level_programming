@@ -5,6 +5,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     new = ""
     a = 0
+    p = 0
 
     while a < len(text):
         new += text[a]
@@ -12,6 +13,9 @@ def text_indentation(text):
             print(new)
             print()
             new = ""
-            if text[a + 1] == ' ':
+            p = 1
+            if a + 1 < len(text) and text[a + 1] == ' ':
                 a += 1
         a += 1
+    if p == 0:
+        print(new)

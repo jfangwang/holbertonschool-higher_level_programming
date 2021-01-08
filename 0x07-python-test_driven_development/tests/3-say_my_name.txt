@@ -23,5 +23,7 @@ Last name not a string
     TypeError: last_name must be a string
 
 Normal case:
-    >>> say_my_name("John")
-    My name is John 
+    >>> say_my_name()
+    Traceback (most recent call last):
+            ...
+    TypeError: first_name must be a string

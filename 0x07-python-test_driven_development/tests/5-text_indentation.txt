@@ -36,3 +36,23 @@ Normal Case:
     Quae animi affectio suum cuique tribuens atque hanc, quam dico.
     <BLANKLINE>
 
+Many ???:
+    >>> text_indentation("Hi??? there:")
+    Hi?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    there:
+    <BLANKLINE>
+
+line with no end symbol:
+    >>> text_indentation("Hi")
+    Hi
+
+input list of chars:
+    >>> text_indentation(['a', 'b'])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
