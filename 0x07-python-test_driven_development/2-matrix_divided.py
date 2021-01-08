@@ -4,15 +4,17 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    new_matrix = matrix
+    err = "matrix must be a matrix (list of lists) of integers/floats"
+    num = ""
 
-    for a in range(len(new_matrix)):
-        if type(new_matrix[a]) is not list:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-        if len(new_matrix[0]) != len(new_matrix[a]):
+    for a in range(len(matrix)):
+        if type(matrix[a]) is not list:
+            raise TypeError(err)
+        if len(matrix[0]) != len(matrix[a]):
             raise TypeError("Each row of the matrix must have the same size")
-        for b in range(len(new_matrix[a])):
-            if type(new_matrix[a][b]) is not int and type(new_matrix[a][b]) is not float:
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-            new_matrix[a][b] = round(new_matrix[a][b] / div, 2)
-    return new_matrix
+        for b in range(len(matrix[a])):
+            num = matrix[a][b]
+            if type(num) is not int and type(num) is not float:
+                raise TypeError(err)
+    return (list(map(lambda row:
+                 list(map(lambda x: round(x / div, 2), row)), matrix)))

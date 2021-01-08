@@ -11,4 +11,3 @@ def print_square(size):
             print('#', end='')
         if b == size - 1:
             print()
-
