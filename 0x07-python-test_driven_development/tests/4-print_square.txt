@@ -25,6 +25,10 @@ Normal Case:
     ########
     ########
 
+Normal Case:
+    >>> print_square(0)
+
+
 Size is not int:
     >>> a = "hello"
     >>> print_square(a)
