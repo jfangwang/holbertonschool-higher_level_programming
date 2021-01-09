@@ -10,3 +10,9 @@ Normal case:
     >>> matrix = [[0, 0], [0, 0]]
     >>> matrix_mul(matrix, matrix)
     [[0, 0], [0, 0]]
+
+Normal case:
+    >>> matrix = [[1, 2], [3, 4]]
+    >>> matrix1 = [[1, 2], [3, 4]]
+    >>> matrix_mul(matrix, matrix1)
+    [[7, 10], [15, 22]]
