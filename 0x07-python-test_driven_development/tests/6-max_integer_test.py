@@ -31,7 +31,7 @@ class TestMaxInt(unittest.TestCase):
     def test_mixed(self):
         """Mixed List"""
         self.assertRaises(TypeError, max_integer, ['h', 1, 2, 3])
-    
+
     def test_empty(self):
         """Nothing"""
         self.assertRaises(TypeError, max_integer, None)
@@ -40,7 +40,8 @@ class TestMaxInt(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, 2)
 
     def test_letters(self):
-      self.assertEqual(max_integer(['a', 'b', 'c', 'd']), 'd')
+        self.assertEqual(max_integer(['a', 'b', 'c', 'd']), 'd')
 
     def test_words(self):
-        self.assertEqual(max_integer(['alpha', 'beta', 'charlie', 'delta']), 'delta')
+        self.assertEqual(max_integer(['alpha', 'beta', 'charlie',
+                                      'delta']), 'delta')
