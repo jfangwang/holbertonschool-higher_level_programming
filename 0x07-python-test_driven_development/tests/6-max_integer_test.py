@@ -20,6 +20,7 @@ class TestMaxInt(unittest.TestCase):
     def test_negative(self):
         """negative"""
         self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
+        self.assertEqual(max_integer([-1, 2, -3, -4]), 2)
 
     def test_float(self):
         """float"""
@@ -27,6 +28,10 @@ class TestMaxInt(unittest.TestCase):
         self.assertEqual(max_integer([-1.1, -2.2, -3.3, 4.69420]), 4.69420)
         self.assertEqual(max_integer([-1.1, -2.2, 3.3, -4.69420]), 3.3)
 
+    def test_mixed(self):
+        """Mixed List"""
+        self.assertRaises(TypeError, max_integer, ['h', 1, 2, 3])
+    
     def test_empty(self):
         """Nothing"""
         self.assertRaises(TypeError, max_integer, None)
@@ -35,4 +40,7 @@ class TestMaxInt(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, 2)
 
     def test_letters(self):
-        self.assertEqual(max_integer(['a', 'b', 'c', 'd']), 'd')
+      self.assertEqual(max_integer(['a', 'b', 'c', 'd']), 'd')
+
+    def test_words(self):
+        self.assertEqual(max_integer(['alpha', 'beta', 'charlie', 'delta']), 'delta')
