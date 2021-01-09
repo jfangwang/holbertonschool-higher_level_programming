@@ -16,3 +16,9 @@ Normal case:
     >>> matrix1 = [[1, 2], [3, 4]]
     >>> matrix_mul(matrix, matrix1)
     [[7, 10], [15, 22]]
+
+Normal case:
+    >>> matrix = [[1, 2]]
+    >>> matrix1 = [[3, 4], [5, 6,]]
+    >>> matrix_mul(matrix, matrix1)
+    [[13, 16]]
