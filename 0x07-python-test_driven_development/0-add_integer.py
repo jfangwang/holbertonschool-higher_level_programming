@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Function Add Int """
-import doctest
 
 
 def add_integer(a, b=98):
