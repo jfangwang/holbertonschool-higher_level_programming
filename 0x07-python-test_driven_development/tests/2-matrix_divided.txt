@@ -7,8 +7,8 @@ import module:
     >>> matrix_divided =  __import__("2-matrix_divided").matrix_divided
 
 Normal case:
-    >>> matrix = [[2, 4, 6], [8, 10, 12]]
-    >>> matrix_divided(matrix, 2)
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 1)
     [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
 
 Print matrix:
@@ -52,7 +52,33 @@ Div is 0:
             ...
     ZeroDivisionError: division by zero
 
+Div is a float:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 1.0)
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
 Float is rounded to 2 decimals:
     >>> matrix = [[1, 2, 3], [4, 5, 6]]
     >>> matrix_divided(matrix, 3)
     [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Float is HUUUGGGEEEE:
+    >>> matrix = [[1.000000000, 2.0000, 3.0], [4.000000000000000000, 5.00000000000, 6.00000000]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Div is negative:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, -1.0)
+    [[-1.0, -2.0, -3.0], [-4.0, -5.0, -6.0]]
+
+Matrix is negative:
+    >>> matrix = [[-1, -2, -3], [-4, -5, -6]]
+    >>> matrix_divided(matrix, 1.0)
+    [[-1.0, -2.0, -3.0], [-4.0, -5.0, -6.0]]
+
+Matrix and div is negative:
+    >>> matrix = [[-1, -2, -3], [-4, -5, -6]]
+    >>> matrix_divided(matrix, -1.0)
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
