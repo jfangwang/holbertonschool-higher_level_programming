@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """matrix"""
 
+
 def matrix_mul(m_a, m_b):
     """matrix_multiplied"""
     if type(m_a) is not list:
@@ -22,7 +23,7 @@ def matrix_mul(m_a, m_b):
                 raise TypeError(err)
     err = "m_b should contain only integers or floats"
     matrix = m_b
-    
+
     for a in range(len(matrix)):
         if type(matrix[a]) is not list:
             raise TypeError(err)

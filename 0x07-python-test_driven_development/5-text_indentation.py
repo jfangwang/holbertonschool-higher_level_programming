@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""indentation"""
+
+
 def text_indentation(text):
     """indentation"""
     if type(text) is not str:

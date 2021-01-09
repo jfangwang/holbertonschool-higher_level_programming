@@ -4,6 +4,7 @@ import doctest
 
 
 def add_integer(a, b=98):
+    """add_int"""
     try:
         a = int(a)
     except:
