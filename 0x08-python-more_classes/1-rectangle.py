@@ -21,14 +21,14 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__height = value
+        self.__width = value
 
     @property
     def height(self):
         """Getter"""
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         """Setter"""
         if type(value) is not int:
