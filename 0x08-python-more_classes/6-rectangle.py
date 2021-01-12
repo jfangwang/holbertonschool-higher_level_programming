@@ -4,8 +4,13 @@
 
 class Rectangle:
     """Reactangle Class"""
+
+    number_of_instances = 0
+    print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         """Init"""
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -28,7 +33,7 @@ class Rectangle:
         """Getter"""
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         """Setter"""
         if type(value) is not int:
@@ -54,7 +59,7 @@ class Rectangle:
             return output
         for a in range(self.__height):
             for b in range(self.__width):
-                output += "#"
+                output += str(self.print_symbol)
             if a < self.__height - 1:
                 output += '\n'
         return output
@@ -65,4 +70,5 @@ class Rectangle:
 
     def __del__(self):
         """__del__"""
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
