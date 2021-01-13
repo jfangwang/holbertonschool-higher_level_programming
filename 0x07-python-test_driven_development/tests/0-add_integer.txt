@@ -8,5 +8,81 @@ import module:
     >>> add_integer(2, 5)
     7
 
+two floats:
     >>> add_integer(2.0, 5.0)
     7
+
+one float:
+    >>> add_integer(2, 5.0)
+    7
+
+2 integers:
+    >>> add_integer(2, 5)
+    7
+
+one float again:
+    >>> add_integer(2.0, 5)
+    7
+
+negative two floats:
+    >>> add_integer(-2.0, -5.0)
+    -7
+
+one negative float:
+    >>> add_integer(-2, -5.0)
+    -7
+
+2 negative integers:
+    >>> add_integer(-2, -5)
+    -7
+
+one negative float again:
+    >>> add_integer(-2.0, -5)
+    -7
+
+one neg and one positve:
+    >>> add_integer(-2, 5)
+    3
+
+one neg and one positve again:
+    >>> add_integer(2, -5)
+    -3
+
+big boi:
+    >>> add_integer(1000000000000, -1000000000000)
+    0
+
+add int (b) and string:
+    >>> add_integer(1, "test")
+    Traceback (most recent call last):
+            ...
+    TypeError: b must be an integer
+
+add int (a) and string:
+    >>> add_integer("test", 1)
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+add int (a) and int (b):
+    >>> add_integer("test", "test")
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+zero arguments:
+    >>> add_integer()
+    Traceback (most recent call last):
+            ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+one argument:
+    >>> add_integer(1,)
+    99
+
+one argument again:
+    >>> add_integer(, 2)
+    Traceback (most recent call last):
+            ...
+    SyntaxError: invalid syntax
+
