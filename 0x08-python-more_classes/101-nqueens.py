@@ -42,20 +42,27 @@ def valid_place(row, col):
                     return False
     return True
 
-
-def solve(queens):
+global tried_spots
+tried_spots = []
+def solve(queens, tried_spots):
     """Backtrace Method"""
     if queens == 0:
         for a in range(N):
             print(board[a])
+        global answer
+        answer = []
+        for a in range(len(tried_spots) - N, len(tried_spots)):
+            answer.append(tried_spots[a])
+        print("Coordinates: {}".format(answer))
         return True
     for row in  range(0, N):
         for col in range(0, N):
             if valid_place(row, col) is True and board[row][col] != 1:
                 board[row][col] = 1
+                tried_spots.append([row, col])
                 # recursive part
-                if solve(queens - 1) is True:
+                if solve(queens - 1, tried_spots) is True:
                     return True
                 board[row][col] = 0
     return False
-solve(N)
+solve(N, tried_spots)
