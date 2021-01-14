@@ -31,11 +31,8 @@ board = [[0]*N for _ in range(N)]
 def valid_place(row, col):
     """checks if a queen can be placed without interferance"""
     # check row and col
-    for a in range(col):
-        if board[row][a] == 1:
-            return False
-    for b in range(row):
-        if board[b][col] == 1:
+    for a in range(N):
+        if board[row][a] == 1 or board[a][col] == 1:
             return False
     # check diagonals
     for k in range(0, N):
@@ -49,11 +46,12 @@ def valid_place(row, col):
 def solve(queens):
     """Backtrace Method"""
     if queens == 0:
-        print(board)
+        for a in range(N):
+            print(board[a])
         return True
-    for row in range(0, N):
+    for row in  range(0, N):
         for col in range(0, N):
-            if (valid_place(row, col) is True) and (board[row][col] != 1):
+            if valid_place(row, col) is True and board[row][col] != 1:
                 board[row][col] = 1
                 # recursive part
                 if solve(queens - 1) is True:
