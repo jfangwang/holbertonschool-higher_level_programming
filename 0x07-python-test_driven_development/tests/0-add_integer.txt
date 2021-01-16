@@ -52,6 +52,10 @@ big boi:
     >>> add_integer(1000000000000, -1000000000000)
     0
 
+big boi 2:
+    >>> add_integer(1e100)
+    10000000000000000159028911097599180468360808563945281389781327557747838772170381060813469985856815202
+
 add int (b) and string:
     >>> add_integer(1, "test")
     Traceback (most recent call last):
