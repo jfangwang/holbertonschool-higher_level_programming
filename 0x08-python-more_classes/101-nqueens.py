@@ -18,7 +18,7 @@ def check_argv():
         print("N must be a number")
         exit(1)
     num = int(sys.argv[1])
-    if num >= 4:
+    if num >= 0:
         global N
         N = num
     else:
