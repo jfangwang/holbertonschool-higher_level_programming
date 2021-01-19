@@ -6,8 +6,8 @@ class MyInt(int):
     """int"""
     def __eq__(self, other):
         """ == will be !="""
-        return int.__ne__(self, other)
+        return False
 
     def __ne__(self, other):
         """ != will be =="""
-        return int.__eq__(self, other)
+        return True
