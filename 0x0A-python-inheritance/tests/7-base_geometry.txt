@@ -1,0 +1,14 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``BaseGeometry``
+-------------------
+
+import module:
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Normal:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("int", 1)
+
+
