@@ -24,9 +24,6 @@ def check_argv():
     else:
         print("N must be at least 4")
         exit(1)
-check_argv()
-board = [[0]*N for _ in range(N)]
-
 
 def valid_place(row, col):
     """checks if a queen can be placed without interferance"""
@@ -67,4 +64,7 @@ def solve(queens, tried_spots):
                     return True
                 board[row][col] = 0
     return False
+
+check_argv()
+board = [[0]*N for a in range(N)]
 solve(N, tried_spots)
