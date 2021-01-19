@@ -11,4 +11,52 @@ Normal:
     >>> b = BaseGeometry()
     >>> b.integer_validator("int", 1)
 
+Negative:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("int", -1)
+    Traceback (most recent call last):
+            ...
+    ValueError: int must be greater than 0
+
+Zero:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("int", 0)
+    Traceback (most recent call last):
+            ...
+    ValueError: int must be greater than 0
+
+Negative:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("int", -1)
+    Traceback (most recent call last):
+            ...
+    ValueError: int must be greater than 0
+
+Float:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("int", 1.23)
+    Traceback (most recent call last):
+            ...
+    TypeError: int must be an integer
+
+No Args:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator()
+    Traceback (most recent call last):
+            ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+One Arg:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator()
+    Traceback (most recent call last):
+            ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+More than 2 Args:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator()
+    Traceback (most recent call last):
+            ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
