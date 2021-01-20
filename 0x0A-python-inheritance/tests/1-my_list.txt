@@ -20,6 +20,9 @@ Presorted Elements:
     >>> list2.print_sorted()
     [1, 2, 3]
 
+    >>> print(list2)
+    [1, 2, 3]
+
 Unsorted Elements:
     >>> list3 = MyList()
     >>> list3.append(3)

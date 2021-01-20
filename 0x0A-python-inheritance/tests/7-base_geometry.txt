@@ -59,4 +59,3 @@ More than 2 Args:
     Traceback (most recent call last):
             ...
     TypeError: integer_validator() takes exactly 3 arguments (1 given)
-
