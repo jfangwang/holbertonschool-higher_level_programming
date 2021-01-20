@@ -4,6 +4,7 @@
 
 class MyList(list):
     """Sorting a list"""
+
     def __init__(self):
         """init"""
         pass
