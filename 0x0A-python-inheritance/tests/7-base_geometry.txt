@@ -46,21 +46,16 @@ No Args:
             ...
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-One Arg:
-    >>> b = BaseGeometry()
-    >>> b.integer_validator()
-    Traceback (most recent call last):
-            ...
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-More than 2 Args:
-    >>> b = BaseGeometry()
-    >>> b.integer_validator()
-    Traceback (most recent call last):
-            ...
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
 Test Area:
+    >>> b = BaseGeometry()
+    >>> b.area()
     Traceback (most recent call last):
             ...
     Exception: area() is not implemented
+
+String as arg:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("int", "test")
+    Traceback (most recent call last):
+            ...
+    TypeError: int must be an integer
