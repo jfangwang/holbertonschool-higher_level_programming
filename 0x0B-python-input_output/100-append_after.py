@@ -14,4 +14,4 @@ def append_after(filename="", search_string="", new_string=""):
             lc += 1
     with open(filename, 'w', encoding='utf-8') as file:
         for line in content:
-            file.write(line)
+            file.write(str(line))
