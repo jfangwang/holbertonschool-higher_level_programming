@@ -24,10 +24,12 @@ def pascal_triangle(n):
             """col"""
             """prints the index of the previous row"""
             if b < a - 1:
+                """if b is not a the last number of the prev row"""
                 num1 = triangle[a - 2][b]
                 rowArr.append(num1 + num2)
                 num2 = num1
             if b == a - 1:
+                """if b is at last num of prev row, print 1"""
                 rowArr.append(1)
         triangle.append(rowArr)
     return triangle
