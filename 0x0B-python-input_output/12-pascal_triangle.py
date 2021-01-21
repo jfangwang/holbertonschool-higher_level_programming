@@ -24,7 +24,6 @@ def pascal_triangle(n):
             """col"""
             """prints the index of the previous row"""
             if b < a - 1:
-                print(triangle[a - 2][b])
                 num1 = triangle[a - 2][b]
                 rowArr.append(num1 + num2)
                 num2 = num1
