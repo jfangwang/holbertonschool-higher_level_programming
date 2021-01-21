@@ -12,7 +12,6 @@ def append_after(filename="", search_string="", new_string=""):
                 content.insert(lc, new_string)
                 lc += 1
             lc += 1
-    print(content)
     with open(filename, 'w', encoding='utf-8') as file:
         for line in content:
             file.write(line)
