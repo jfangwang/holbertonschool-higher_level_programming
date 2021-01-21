@@ -7,10 +7,10 @@ def append_after(filename="", search_string="", new_string=""):
     with open(filename, 'r+', encoding='utf-8') as file:
         content = file.readlines()
         lc = 0
-        for index in range(0, len(content)):
-            if search_string in content[index]:
-                content.insert(lc, new_string)
+        while lc < len(content):
+            if search_string in content[lc]:
                 lc += 1
+                content.insert(lc, new_string)
             lc += 1
         file.seek(0)
         for line in content:
