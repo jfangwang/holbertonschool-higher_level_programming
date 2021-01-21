@@ -7,7 +7,7 @@ def append_after(filename="", search_string="", new_string=""):
     with open(filename, 'r+', encoding='utf-8') as file:
         content = file.readlines()
         lc = 0
-        while lc < len(content):
+        for index in range(len(content)):
             if search_string in content[lc]:
                 lc += 1
                 content.insert(lc, new_string)
