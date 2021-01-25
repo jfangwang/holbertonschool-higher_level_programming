@@ -16,7 +16,7 @@ class Rectangle(Base):
     @property
     def width(self):
         """width getter"""
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, width):
@@ -44,7 +44,7 @@ class Rectangle(Base):
     @property
     def x(self):
         """x getter"""
-        return self.x
+        return self.__x
 
     @x.setter
     def x(self, x):
@@ -56,7 +56,7 @@ class Rectangle(Base):
     @property
     def y(self):
         """y getter"""
-        return self.y
+        return self.__y
 
     @y.setter
     def y(self, y):
@@ -82,9 +82,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """str"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.
-                                                       __y, self.__width, self.
-                                                       __height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.
+                                                       y, self.width, self.
+                                                       height)
 
     def update(self, *args, **kwargs):
         """update"""
@@ -94,3 +94,15 @@ class Rectangle(Base):
             for a in args:
                 setattr(self, attrs[index], args[index])
                 index += 1
+        else:
+            for a, b in kwargs.items():
+                setattr(self, a, b)
+
+    def to_dictionary(self):
+        """to dictionary"""
+        dict = {}
+        index = 0
+        attrs = ["id", "width", "height", "x", "y"]
+        for a in attrs:
+            dict[index] = getattr(self, a)
+        return dict

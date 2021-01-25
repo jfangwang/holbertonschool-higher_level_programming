@@ -9,6 +9,7 @@ class test_rectangle(unittest.TestCase):
     """test rectangle"""
     @classmethod
     def setUpClass(cls):
+        Base._Base__nb_objects = 0
         cls.r1 = Rectangle(10, 2)
         cls.r2 = Rectangle(2, 10)
         cls.r3 = Rectangle(10, 2, 0, 0, 12)
