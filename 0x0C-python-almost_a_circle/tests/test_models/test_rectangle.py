@@ -109,17 +109,18 @@ class test_rectangle(unittest.TestCase):
     def test_to_dictionary(self):
         """to dictionary - task 13"""
         Base._Base__nb_objects = 0
+        rdict1 = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
         r1 = Rectangle(10, 2, 1, 9)
         self.assertEqual(str(r1), "[Rectangle] (1) 1/9 - 10/2")
         r1_dictionary = r1.to_dictionary()
-        self.assertEqual(type(r1), "<class 'dict'>")
+        self.assertDictEqual(r1_dictionary, rdict1)
+        self.assertIs(type(r1_dictionary), dict)
 
         r2 = Rectangle(1, 1)
-        self.assertEqual(str(r2), "[Rectangle] (2) 0/0 - 1/1")
         r2.update(**r1_dictionary)
-        self.assertEqual(str(r2), "[Rectangle] (2) 1/9 - 10/2")
-        
+        self.assertNotEqual(r1, r2)
  
+    
     @classmethod
     def tearDownClass(cls):
         """del instances"""
