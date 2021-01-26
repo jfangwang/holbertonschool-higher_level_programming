@@ -104,10 +104,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """to dictionary"""
-        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
-        #dict = {}
-        #index = 0
-        #attrs = ["id", "width", "height", "x", "y"]
-        #for a in attrs:
-        #    dict[index] = getattr(self, a)
-        #return dict
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}

@@ -22,7 +22,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """str"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.size)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.size)
 
     def update(self, *args, **kwargs):
         """update"""
@@ -41,10 +42,3 @@ class Square(Rectangle):
     def to_dictionary(self):
         """to dictionary"""
         return {'x': self.x, 'y': self.y, 'id': self.y, 'size': self.size}
-        #sdict = {}
-        #index = 0
-        #attrs = ["id", "size", "x", "y"]
-        #for a in attrs:
-        #    attrs[index] = getattr(self, a)
-        #    index += 1
-        #return sdict
