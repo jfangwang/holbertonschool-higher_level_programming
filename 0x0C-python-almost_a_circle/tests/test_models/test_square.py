@@ -46,6 +46,7 @@ class test_square(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             s1.size = "9"
             str(s1)
+
     def test_square_update(self):
         """square update - task 12"""
         Base._Base__nb_objects = 0
@@ -75,8 +76,6 @@ class test_square(unittest.TestCase):
         s1_dictionary = s1.to_dictionary()
         self.assertDictEqual(s1_dictionary, sdict1)
         self.assertIs(type(s1_dictionary), dict)
-        
         s2 = Rectangle(1, 1)
         s2.update(**s1_dictionary)
         self.assertNotEqual(s1, s2)
-
