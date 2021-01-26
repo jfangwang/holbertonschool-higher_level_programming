@@ -7,11 +7,11 @@ class Rectangle(Base):
     """rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """init"""
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -49,6 +49,8 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
         """x setter"""
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
         self.__x = x
@@ -61,6 +63,8 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """y setter"""
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
@@ -82,27 +86,28 @@ class Rectangle(Base):
 
     def __str__(self):
         """str"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.
-                                                       y, self.width, self.
-                                                       height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """update"""
+        index = 0
+        attrs = ["id", "width", "height", "x", "y"]
+
         if len(args) != 0:
-            index = 0
-            attrs = ["id", "width", "height", "x", "y"]
             for a in args:
                 setattr(self, attrs[index], args[index])
                 index += 1
         else:
-            for a, b in kwargs.items():
-                setattr(self, a, b)
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """to dictionary"""
-        dict = {}
-        index = 0
-        attrs = ["id", "width", "height", "x", "y"]
-        for a in attrs:
-            dict[index] = getattr(self, a)
-        return dict
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+        #dict = {}
+        #index = 0
+        #attrs = ["id", "width", "height", "x", "y"]
+        #for a in attrs:
+        #    dict[index] = getattr(self, a)
+        #return dict

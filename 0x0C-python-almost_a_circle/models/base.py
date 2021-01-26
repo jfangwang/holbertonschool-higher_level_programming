@@ -27,9 +27,7 @@ class Base:
         l = []
         fn = cls.__name__ + ".json"
 
-        if list_objs is None:
-            return list
-        else:
+        if list_objs:
             for a in list_objs:
                 l.append(a.to_dictionary())
         with open(fn, 'w') as f:
@@ -47,10 +45,12 @@ class Base:
         """create"""
         if cls.__name__ == "Rectangle":
             willy = cls(1, 1)
+            cls.update(willy, **dictionary)
+            return willy
         elif cls.__name__ == "Square":
             willy = cls(1)
-        cls.update(willy, **dictionary)
-        return willy
+            cls.update(willy, **dictionary)
+            return willy
 
     @classmethod
     def load_from_file(cls):
@@ -58,11 +58,10 @@ class Base:
         l = []
         fn = cls.__name__ + ".json"
         try:
-            with open(filename, 'r') as f:
-                l = cls.from_json_string(f.read())
-            p = from_json_string(l)
+            with open(fn) as f:
+                p = cls.from_json_string(f.read())
             for a in p:
-                new[a] = cls.create(new[a])
+                l.append(cls.create(**a))
         except:
             pass
         return l

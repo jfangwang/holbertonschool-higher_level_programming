@@ -27,21 +27,24 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """update"""
         index = 0
+        attrs = ["id", "size", "x", "y"]
         if len(args) != 0:
-            attrs = ["id", "size", "x", "y"]
             for a in args:
                 setattr(self, attrs[index], args[index])
                 index += 1
         else:
-            for a, b in kwargs.items():
-                setattr(self, a, b)
+            for k, v in kwargs.items():
+                for a in range(len(attrs)):
+                    if k == attrs[a]:
+                        setattr(self, attrs[a], v)
 
     def to_dictionary(self):
         """to dictionary"""
-        sdict = {}
-        index = 0
-        attrs = ["id", "size", "x", "y"]
-        for a in attrs:
-            attrs[index] = getattr(self, a)
-            index += 1
-        return sdict
+        return {'x': self.x, 'y': self.y, 'id': self.y, 'size': self.size}
+        #sdict = {}
+        #index = 0
+        #attrs = ["id", "size", "x", "y"]
+        #for a in attrs:
+        #    attrs[index] = getattr(self, a)
+        #    index += 1
+        #return sdict
