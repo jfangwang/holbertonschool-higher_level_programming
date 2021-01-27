@@ -4,7 +4,7 @@ import json
 
 
 class Base:
-    """base"""
+    """A class Base doing base."""
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -17,14 +17,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """to json string"""
+        """Function to json string."""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return []
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """save to file"""
+        """Function save to file."""
         l = []
         fn = cls.__name__ + ".json"
 
@@ -36,14 +36,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """from json string"""
+        """Function from json string."""
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """create"""
+        """Function to create bunch of Willys."""
         if cls.__name__ == "Rectangle":
             willy = cls(1, 1)
             cls.update(willy, **dictionary)
@@ -55,7 +55,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """load from file"""
+        """Function to load from file."""
         l = []
         fn = cls.__name__ + ".json"
         try:

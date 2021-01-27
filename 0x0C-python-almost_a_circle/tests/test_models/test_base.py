@@ -6,10 +6,10 @@ from models.rectangle import Rectangle
 
 
 class test_base(unittest.TestCase):
-    """test base"""
+    """Class test base."""
     @classmethod
     def setUpClass(cls):
-        """set up instances"""
+        """Method set up instances."""
         cls.b1 = Base()
         cls.b2 = Base()
         cls.b3 = Base()
@@ -17,7 +17,7 @@ class test_base(unittest.TestCase):
         cls.b5 = Base()
 
     def test_id(self):
-        """test id"""
+        """Method test id."""
         self.assertEqual(self.b1.id, 1)
         self.assertEqual(self.b2.id, 2)
         self.assertEqual(self.b3.id, 3)
