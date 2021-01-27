@@ -118,8 +118,3 @@ class test_rectangle(unittest.TestCase):
         r2 = Rectangle(1, 1)
         r2.update(**r1_dictionary)
         self.assertNotEqual(r1, r2)
-
-    @classmethod
-    def tearDownClass(cls):
-        """del instances"""
-        pass

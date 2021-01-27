@@ -24,7 +24,3 @@ class test_base(unittest.TestCase):
         self.assertEqual(self.b3.id, 3)
         self.assertEqual(self.b4.id, 12)
         self.assertEqual(self.b5.id, 4)
-
-    @classmethod
-    def tearDownClass(cls):
-        pass
