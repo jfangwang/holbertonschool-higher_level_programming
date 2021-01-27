@@ -7,7 +7,6 @@ from models.rectangle import Rectangle
 
 class test_base(unittest.TestCase):
     """test base"""
-
     @classmethod
     def setUpClass(cls):
         """set up instances"""

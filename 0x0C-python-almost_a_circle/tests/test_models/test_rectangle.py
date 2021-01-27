@@ -64,17 +64,14 @@ class test_rectangle(unittest.TestCase):
             Rectangle(1.1, 1)
         with self.assertRaisesRegex(ValueError, 'width must be > 0'):
             Rectangle(-1, 1)
-        """height"""
         with self.assertRaisesRegex(TypeError, 'height must be an integer'):
             Rectangle(1, "test")
         with self.assertRaisesRegex(TypeError, 'height must be an integer'):
             Rectangle(1, 1.1)
         with self.assertRaisesRegex(ValueError, 'height must be > 0'):
             Rectangle(1, -1)
-        """y"""
         with self.assertRaisesRegex(ValueError, 'y must be >= 0'):
             Rectangle(1, 1, 1, -1)
-        """x"""
         with self.assertRaisesRegex(ValueError, 'x must be >= 0'):
             Rectangle(1, 1, -1, 1)
 
@@ -93,7 +90,6 @@ class test_rectangle(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] (89) 4/10 - 2/3")
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
-        """task 9"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 10, 10, 10)
         self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/10")
