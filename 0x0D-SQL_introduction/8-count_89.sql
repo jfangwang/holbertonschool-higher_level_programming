@@ -1,2 +1,2 @@
 -- task 8
-select * from first_table where id = 89
+SELECT * FROM first_table WHERE id = 89
