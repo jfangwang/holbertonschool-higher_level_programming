@@ -1,2 +1,2 @@
 -- cities
-
+CREATE DATABASE IFHBTN_0D_USA
