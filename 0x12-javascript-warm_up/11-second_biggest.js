@@ -6,4 +6,10 @@ for (let a = 2; a < argv.length; a++) {
     big = parseInt(argv[a]);
   }
 }
-console.log(big);
+let bigTwo = 0;
+for (let a = 2; a < argv.length; a++) {
+  if (parseInt(argv[a]) > bigTwo && parseInt(argv[a]) !== big) {
+    bigTwo = parseInt(argv[a]);
+  }
+}
+console.log(bigTwo);
