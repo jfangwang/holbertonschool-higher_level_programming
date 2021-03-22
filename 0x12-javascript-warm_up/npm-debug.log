@@ -1,0 +1,153 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'semistandard',
+1 verbose cli   '-g' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 verbose cache add [ 'semistandard', null ]
+5 verbose cache add name=undefined spec="semistandard" args=["semistandard",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'semistandard',
+6 verbose parsed url   path: 'semistandard',
+6 verbose parsed url   href: 'semistandard' }
+7 silly lockFile c221f11d-semistandard semistandard
+8 verbose lock semistandard /home/vagrant/.npm/c221f11d-semistandard.lock
+9 silly lockFile c221f11d-semistandard semistandard
+10 silly lockFile c221f11d-semistandard semistandard
+11 verbose addNamed [ 'semistandard', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 7b67b5d8-semistandard semistandard@
+14 verbose lock semistandard@ /home/vagrant/.npm/7b67b5d8-semistandard.lock
+15 silly addNameRange { name: 'semistandard', range: '*', hasData: false }
+16 verbose url raw semistandard
+17 verbose url resolving [ 'http://registry.npmjs.org/', './semistandard' ]
+18 verbose url resolved http://registry.npmjs.org/semistandard
+19 info trying registry request attempt 1 at 14:09:33
+20 verbose etag "a4ec5552f77d4cf7e7b2cf1338933b18"
+21 http GET http://registry.npmjs.org/semistandard
+22 http 304 http://registry.npmjs.org/semistandard
+23 silly registry.get cb [ 304,
+23 silly registry.get   { date: 'Mon, 22 Mar 2021 14:09:32 GMT',
+23 silly registry.get     connection: 'keep-alive',
+23 silly registry.get     'set-cookie': [ '__cfduid=d5c0bc9c62f57769221280598dc5b3a1e1616422172; expires=Wed, 21-Apr-21 14:09:32 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+23 silly registry.get     'cf-ray': '633fff8f89ef91e6-EWR',
+23 silly registry.get     age: '3839',
+23 silly registry.get     'cache-control': 'public, max-age=300',
+23 silly registry.get     etag: '"a4ec5552f77d4cf7e7b2cf1338933b18"',
+23 silly registry.get     'last-modified': 'Thu, 12 Nov 2020 05:01:48 GMT',
+23 silly registry.get     vary: 'Accept-Encoding',
+23 silly registry.get     'cf-cache-status': 'HIT',
+23 silly registry.get     'cf-request-id': '08fbde0db5000091e6c29d7000000001',
+23 silly registry.get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+23 silly registry.get     server: 'cloudflare' } ]
+24 verbose etag semistandard from cache
+25 silly addNameRange number 2 { name: 'semistandard', range: '*', hasData: true }
+26 silly addNameRange versions [ 'semistandard',
+26 silly addNameRange   [ '1.0.0',
+26 silly addNameRange     '1.0.1',
+26 silly addNameRange     '1.0.2',
+26 silly addNameRange     '2.0.0',
+26 silly addNameRange     '2.1.0',
+26 silly addNameRange     '2.2.0',
+26 silly addNameRange     '2.2.1',
+26 silly addNameRange     '2.3.0',
+26 silly addNameRange     '2.3.1',
+26 silly addNameRange     '2.3.2',
+26 silly addNameRange     '2.4.1',
+26 silly addNameRange     '2.4.4',
+26 silly addNameRange     '2.4.5',
+26 silly addNameRange     '2.5.0',
+26 silly addNameRange     '2.6.0',
+26 silly addNameRange     '2.6.2',
+26 silly addNameRange     '2.6.5',
+26 silly addNameRange     '2.10.0',
+26 silly addNameRange     '3.1.2',
+26 silly addNameRange     '3.3.0',
+26 silly addNameRange     '4.0.0',
+26 silly addNameRange     '4.0.1',
+26 silly addNameRange     '4.0.2',
+26 silly addNameRange     '4.0.3',
+26 silly addNameRange     '4.1.0',
+26 silly addNameRange     '4.1.1',
+26 silly addNameRange     '4.1.2',
+26 silly addNameRange     '4.1.3',
+26 silly addNameRange     '4.1.4',
+26 silly addNameRange     '4.2.0',
+26 silly addNameRange     '4.2.1',
+26 silly addNameRange     '4.2.2',
+26 silly addNameRange     '4.3.0',
+26 silly addNameRange     '5.0.0',
+26 silly addNameRange     '6.0.0',
+26 silly addNameRange     '6.1.0',
+26 silly addNameRange     '6.1.1',
+26 silly addNameRange     '6.1.2',
+26 silly addNameRange     '7.0.0-0',
+26 silly addNameRange     '7.0.0-1',
+26 silly addNameRange     '7.0.0-2',
+26 silly addNameRange     '7.0.0',
+26 silly addNameRange     '7.0.1',
+26 silly addNameRange     '7.0.2',
+26 silly addNameRange     '7.0.3',
+26 silly addNameRange     '7.0.4',
+26 silly addNameRange     '7.0.5',
+26 silly addNameRange     '8.0.0',
+26 silly addNameRange     '9.0.0-beta.0',
+26 silly addNameRange     '9.0.0',
+26 silly addNameRange     '9.1.0',
+26 silly addNameRange     '9.2.0',
+26 silly addNameRange     '9.2.1',
+26 silly addNameRange     '10.0.0',
+26 silly addNameRange     '11.0.0',
+26 silly addNameRange     '12.0.0',
+26 silly addNameRange     '12.0.1',
+26 silly addNameRange     '13.0.0',
+26 silly addNameRange     '13.0.1',
+26 silly addNameRange     '14.0.0',
+26 silly addNameRange     '14.0.1',
+26 silly addNameRange     '14.1.0',
+26 silly addNameRange     '14.2.0',
+26 silly addNameRange     '14.2.1',
+26 silly addNameRange     '14.2.2',
+26 silly addNameRange     '14.2.3',
+26 silly addNameRange     '15.0.0',
+26 silly addNameRange     '16.0.0' ] ]
+27 verbose addNamed [ 'semistandard', '16.0.0' ]
+28 verbose addNamed [ '16.0.0', '16.0.0' ]
+29 silly lockFile 987c823a-semistandard-16-0-0 semistandard@16.0.0
+30 verbose lock semistandard@16.0.0 /home/vagrant/.npm/987c823a-semistandard-16-0-0.lock
+31 silly lockFile 39553892-standard-semistandard-16-0-0-tgz http://registry.npmjs.org/semistandard/-/semistandard-16.0.0.tgz
+32 verbose lock http://registry.npmjs.org/semistandard/-/semistandard-16.0.0.tgz /home/vagrant/.npm/39553892-standard-semistandard-16-0-0-tgz.lock
+33 verbose addRemoteTarball [ 'http://registry.npmjs.org/semistandard/-/semistandard-16.0.0.tgz',
+33 verbose addRemoteTarball   '6ed546dcccd6555a9a87dbeff6a6e53ab250479f' ]
+34 silly lockFile 39553892-standard-semistandard-16-0-0-tgz http://registry.npmjs.org/semistandard/-/semistandard-16.0.0.tgz
+35 silly lockFile 39553892-standard-semistandard-16-0-0-tgz http://registry.npmjs.org/semistandard/-/semistandard-16.0.0.tgz
+36 silly lockFile 987c823a-semistandard-16-0-0 semistandard@16.0.0
+37 silly lockFile 987c823a-semistandard-16-0-0 semistandard@16.0.0
+38 silly lockFile 7b67b5d8-semistandard semistandard@
+39 silly lockFile 7b67b5d8-semistandard semistandard@
+40 error Error: EACCES, mkdir '/home/vagrant/tmp/npm-12555-85b6vFLD'
+40 error  { [Error: EACCES, mkdir '/home/vagrant/tmp/npm-12555-85b6vFLD']
+40 error   errno: 3,
+40 error   code: 'EACCES',
+40 error   path: '/home/vagrant/tmp/npm-12555-85b6vFLD' }
+41 error Please try running this command again as root/Administrator.
+42 error System Linux 3.13.0-170-generic
+43 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "semistandard" "-g"
+44 error cwd /home/vagrant/holbertonschool-higher_level_programming/0x12-javascript-warm_up
+45 error node -v v0.10.25
+46 error npm -v 1.3.10
+47 error path /home/vagrant/tmp/npm-12555-85b6vFLD
+48 error code EACCES
+49 error errno 3
+50 error stack Error: EACCES, mkdir '/home/vagrant/tmp/npm-12555-85b6vFLD'
+51 verbose exit [ 3, true ]
