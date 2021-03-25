@@ -14,8 +14,8 @@ if __name__ == "__main__":
     except:
         print("invalid credentials")
     cur = db.cursor()
-    cur.execute("SELECT * from states WHERE BINARY name LIKE '{}' ORDER BY id;"
-                .format(argv[4]))
+    cur.execute("SELECT * from states WHERE BINARY name LIKE '{}'\
+                 ORDER BY id ASC;".format(argv[4]))
     rows = cur.fetchall()
     for row in rows:
         print(row)

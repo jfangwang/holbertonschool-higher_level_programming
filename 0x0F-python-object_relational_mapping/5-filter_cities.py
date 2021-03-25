@@ -4,6 +4,7 @@ if __name__ == "__main__":
     import MySQLdb
     import sys
     argv = sys.argv
+    state_id = 0
     if len(argv) != 5:
         print("USAGE: ./0-select_states.py username password\
             database_name state_name")
@@ -14,10 +15,19 @@ if __name__ == "__main__":
     except:
         print("invalid credentials")
     cur = db.cursor()
-    cur.execute("SELECT * from states WHERE BINARY name LIKE '{}' ORDER BY id;"
+    # IDK how to do this in one sql query...rip
+    cur.execute("Select states.id from states WHERE states.name = '{}'"
                 .format(argv[4]))
+    state_id = cur.fetchone()
+    if state_id is None:
+        state_id = (0,)
+    cur.execute("Select cities.name from cities WHERE cities.state_id = {};"
+                .format(state_id[0]))
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    if len(rows) > 0:
+        for a in range(0, len(rows)):
+            if len(rows) - 1 > a:
+                print(rows[a][0], end=', ')
+        print(rows[a][0])
     cur.close()
     db.close()
