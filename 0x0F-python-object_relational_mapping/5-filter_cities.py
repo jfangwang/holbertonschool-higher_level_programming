@@ -14,7 +14,7 @@ if __name__ == "__main__":
         db = MySQLdb.connect(host="localhost", user=argv[1],
                              passwd=argv[2], db=argv[3], port=3306)
     except:
-        print("invalid credentials")
+        print()
 
     # Check for injections
     while argv[4][index].isalpha() and index < len(argv[4]) - 1:
@@ -24,14 +24,10 @@ if __name__ == "__main__":
     argv[4] = argv[4][slice(index)]
 
     cur = db.cursor()
-    # IDK how to do this in one sql query...rip
-    cur.execute("Select states.id from states WHERE states.name = '{}'"
-                .format(argv[4]))
-    state_id = cur.fetchone()
-    if state_id is None:
-        state_id = (0,)
-    cur.execute("Select cities.name from cities WHERE cities.state_id = {};"
-                .format(state_id[0]))
+    cur.execute("SELECT cities.name FROM cities WHERE cities.state_id\
+                 IN (SELECT states.id FROM states\
+                     WHERE states.name = '{}')\
+                 ORDER BY id ASC".format(argv[4]))
     rows = cur.fetchall()
     if len(rows) > 0:
         for a in range(0, len(rows)):
