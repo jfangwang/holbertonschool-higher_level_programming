@@ -11,7 +11,7 @@ if __name__ == "__main__":
             database_name state_name")
         exit()
     try:
-        db = MySQLdb.connect(host="localhost", user=argv[1],
+        db = MySQLdb.connect(host="localhost", user=argv[1], charset="utf8",
                              passwd=argv[2], db=argv[3], port=3306)
     except:
         print()
@@ -34,5 +34,7 @@ if __name__ == "__main__":
             if len(rows) - 1 > a:
                 print(rows[a][0], end=', ')
         print(rows[a][0])
+    else:
+        print()
     cur.close()
     db.close()

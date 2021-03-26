@@ -8,7 +8,7 @@ if __name__ == "__main__":
         print("USAGE: ./0-select_states.py username password database_name")
         exit()
     try:
-        db = MySQLdb.connect(host="localhost", user=argv[1],
+        db = MySQLdb.connect(host="localhost", user=argv[1], charset="utf8",
                              passwd=argv[2], db=argv[3], port=3306)
     except:
         print()

@@ -5,14 +5,9 @@ from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from model_state import Base, State
+from model_city import City
 Base = declarative_base()
 
-
-class State(Base):
-    __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, nullable=False,
-                unique=True)
-    name = Column(String(128), nullable=False)
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
@@ -23,8 +18,7 @@ if __name__ == "__main__":
     session = Session()
 
     # You want to get the object, not the object's properties
-    states_name = session.query(State).filter(State.name.like('%a%')).all()
+    states_name = session.query(State, City).join(City).order_by(City.id).all()
     for a in states_name:
-        session.delete(a)
-        session.commit()
+        print("{}: ({}) {}".format(a[0].name, a[1].id, a[1].name))
     session.close()
