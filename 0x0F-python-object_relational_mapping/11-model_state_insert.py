@@ -22,12 +22,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
+    states_name = session.query(State.name, State.id).all()
     new_state = State()
-    new_state.id = 8
-    new_state.name = "Lousiana3"
+    new_state.id = len(states_name) + 1
+    new_state.name = "Louisiana"
+    print(new_state.id)
     session.add(new_state)
     session.commit()
-    states_name = session.query(State.id, State.name).all()
-
-    print(len(states_name))
     session.close()

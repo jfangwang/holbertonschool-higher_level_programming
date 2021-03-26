@@ -2,16 +2,10 @@
 """7-model_state_fetch"""
 import sys
 from sqlalchemy import create_engine, Column, Integer, String
+from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-Base = declarative_base()
 
-
-class State(Base):
-    __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, nullable=False,
-                unique=True)
-    name = Column(String(128), nullable=False)
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
@@ -20,7 +14,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states_name = session.query(State.name).order_by(State.id).all()
-    for index in range(len(states_name)):
-        print("{}: {}".format(index + 1, states_name[index][0]))
+    states_name = session.query(State).order_by(State.id).all()
+    for a in states_name:
+        print("{}: {}".format(a.id, a.name))
     session.close()
