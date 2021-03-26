@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states_name = session.query(State.name, State.id)\
+    states_name = session.query(State.name, State.id)
     .filter(State.name.like('%a%')).order_by(State.id).all()
     try:
         for count in range(0, len(states_name)):
@@ -29,3 +29,4 @@ if __name__ == "__main__":
                                   states_name[count][0]))
     except:
         print("Nothing")
+    session.close()

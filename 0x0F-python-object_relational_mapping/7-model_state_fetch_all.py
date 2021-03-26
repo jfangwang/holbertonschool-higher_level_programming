@@ -23,3 +23,4 @@ if __name__ == "__main__":
     states_name = session.query(State.name).order_by(State.id).all()
     for index in range(len(states_name)):
         print("{}: {}".format(index + 1, states_name[index][0]))
+    session.close()

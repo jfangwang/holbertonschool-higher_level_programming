@@ -21,10 +21,10 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states_name = session.query(State.name).order_by(State.id).first()
-    try:
-        if len(states_name) > 0:
-            print('{}: {}'.format(1, states_name[0]))
-    except:
-        print("Nothing")
+    states_name = session.query(State.id, State.name)
+    .filter(State.name.like(sys.argv[4])).all()
+    if len(states_name) > 0:
+        print("{}".format(states_name[count][0]))
+    else:
+        print("Not found")
     session.close()

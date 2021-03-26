@@ -21,10 +21,13 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states_name = session.query(State.name).order_by(State.id).first()
-    try:
-        if len(states_name) > 0:
-            print('{}: {}'.format(1, states_name[0]))
-    except:
-        print("Nothing")
+
+    new_state = State()
+    new_state.id = 8
+    new_state.name = "Lousiana3"
+    session.add(new_state)
+    session.commit()
+    states_name = session.query(State.id, State.name).all()
+
+    print(len(states_name))
     session.close()
