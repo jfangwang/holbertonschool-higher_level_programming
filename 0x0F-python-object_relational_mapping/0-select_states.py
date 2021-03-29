@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Get all states"""
+""" Get all states test"""
 if __name__ == "__main__":
     import MySQLdb
     import sys
