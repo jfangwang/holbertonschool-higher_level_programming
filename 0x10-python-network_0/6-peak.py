@@ -5,6 +5,8 @@
 def find_peak(list_of_integers):
     """ find_peak Time complexity: O(log(n))"""
     return(find(list_of_integers, 0, len(list_of_integers) - 1))
+
+
 def find(prospects_arr, low, high):
     """
     prospects_arr: An array of numbers that could contain a peak number
