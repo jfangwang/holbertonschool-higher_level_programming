@@ -4,30 +4,31 @@
 
 def find_peak(list_of_integers):
     """ find_peak Time complexity: O(log(n))"""
+    return(find(list_of_integers, 0, len(list_of_integers) - 1))
+def find(prospects_arr, low, high):
     """
-    list_of_integers: An array of numbers that could contain a peak number
+    prospects_arr: An array of numbers that could contain a peak number
     """
-    middle = int(len(list_of_integers) / 2)
-    # print(str(list_of_integers) + " middle is: " + str(middle))
-    if len(list_of_integers) == 0:
+    middle = int(low/high)
+    # print(str(prospects_arr) + " middle is: " + str(middle))
+    if len(prospects_arr) == 0:
         return None
-    if len(list_of_integers) == 1:
-        return list_of_integers[0]
-    if len(list_of_integers) == 2:
-        if list_of_integers[0] > list_of_integers[1]:
-            return list_of_integers[0]
+    if len(prospects_arr) == 1:
+        return prospects_arr[0]
+    if len(prospects_arr) == 2:
+        if prospects_arr[0] > prospects_arr[1]:
+            return prospects_arr[0]
         else:
-            print(list_of_integers[1])
-            return list_of_integers[1]
-    """list_of_integers has to be bigger than 3"""
-    if (list_of_integers[middle] >= list_of_integers[middle + 1] and
-       list_of_integers[middle] >= list_of_integers[middle + 1]):
-        return list_of_integers[middle]
-    if list_of_integers[middle + 1] > list_of_integers[middle]:
+            return prospects_arr[1]
+    """prospects_arr has to be bigger than 3"""
+    if (prospects_arr[middle] >= prospects_arr[middle + 1] and
+       prospects_arr[middle] >= prospects_arr[middle + 1]):
+        return prospects_arr[middle]
+    if prospects_arr[middle + 1] > prospects_arr[middle]:
         new_arr = []
-        new_arr = list_of_integers[middle + 1:len(list_of_integers)]
-        return find_peak(new_arr)
-    if list_of_integers[middle - 1] > list_of_integers[middle]:
+        new_arr = prospects_arr[middle + 1:high]
+        return find(new_arr, middle + 1, high)
+    if prospects_arr[middle - 1] > prospects_arr[middle]:
         new_arr = []
-        new_arr = list_of_integers[middle - 1:0]
-        return find_peak(new_arr)
+        new_arr = prospects_arr[middle - 1:0]
+        return find(new_arr, 0, middle)
