@@ -13,9 +13,8 @@ def find(num_arr, low, high):
     """num_arr: An array of numbers"""
     size = high - low
     middle = low + int(size/2)
-
-    if low == high or middle:
-        return num_arr[low]
+    if low == high or ((num_arr[middle - 1] < num_arr[middle]) and (num_arr[middle + 1] < num_arr[middle])):
+        return num_arr[middle]
     elif num_arr[middle + 1] > num_arr[middle]:
         return find(num_arr, middle + 1, high)
     else:
