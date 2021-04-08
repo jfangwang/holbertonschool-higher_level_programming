@@ -11,31 +11,27 @@ def find_peak(list_of_integers):
         return(find(list_of_integers, 0, len(list_of_integers)))
 
 
-def find(prospects_arr, low, high):
+def find(num_arr, low, high):
     """
-    prospects_arr: An array of numbers that could contain a peak number
+    num_arr: An array of numbers that could contain a peak number
     """
-    # print(prospects_arr)
-
-    middle = int(high/2)
+    # print(num_arr)
+    size = high - low
+    middle = low + int(size/2)
     # print(low, high)
-    # print(str(prospects_arr) + " middle is: " + str(middle))
+    # print(str(num_arr) + " middle is: " + str(middle))
     if high == low == middle:
-        return prospects_arr[middle]
+        return num_arr[middle]
     if high - low == 1:
-        if prospects_arr[0] > prospects_arr[1]:
-            return prospects_arr[0]
+        if num_arr[high] > num_arr[low]:
+            return num_arr[high]
         else:
-            return prospects_arr[1]
-    """prospects_arr has to be bigger than 3"""
-    if (prospects_arr[middle] >= prospects_arr[middle + 1] and
-       prospects_arr[middle] >= prospects_arr[middle + 1]):
-        return prospects_arr[middle]
-    if prospects_arr[middle + 1] > prospects_arr[middle]:
-        new_arr = []
-        new_arr = prospects_arr[middle + 1:high]
-        return find(new_arr, middle + 1, high - 1)
-    if prospects_arr[middle - 1] > prospects_arr[middle]:
-        new_arr = []
-        new_arr = prospects_arr[middle - 1:0]
-        return find(new_arr, 0, middle - 1)
+            return num_arr[low]
+    """num_arr has to be bigger than 3"""
+    if (num_arr[middle] >= num_arr[middle + 1] and
+       num_arr[middle] >= num_arr[middle + 1]):
+        return num_arr[middle]
+    if num_arr[middle + 1] > num_arr[middle]:
+        return find(num_arr, middle + 1, high - 1)
+    if num_arr[middle - 1] > num_arr[middle]:
+        return find(num_arr, 0, middle - 1)
