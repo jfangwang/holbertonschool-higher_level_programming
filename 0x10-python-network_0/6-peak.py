@@ -14,7 +14,9 @@ def find(num_arr, low, high):
     size = high - low
     middle = low + int(size/2)
 
-    if (num_arr[middle] >= num_arr[middle + 1] and
+    if high == low == middle:
+        return num_arr[middle]
+    elif (num_arr[middle] >= num_arr[middle + 1] and
        num_arr[middle] >= num_arr[middle + 1]):
         return num_arr[middle]
     elif num_arr[middle + 1] > num_arr[middle]:
