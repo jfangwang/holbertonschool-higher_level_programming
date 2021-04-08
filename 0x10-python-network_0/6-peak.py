@@ -3,7 +3,7 @@
 
 
 def find_peak(list_of_integers):
-    """ find_peak """
+    """ find_peak Time complexity: O(N)"""
     if len(list_of_integers) == 0:
         return None
     if len(list_of_integers) == 1:
