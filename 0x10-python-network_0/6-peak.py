@@ -19,8 +19,10 @@ def find_peak(list_of_integers):
         else:
             print(list_of_integers[1])
             return list_of_integers[1]
-    """Prospects array has to be bigger than 3"""
-
+    """list_of_integers has to be bigger than 3"""
+    if (list_of_integers[middle] >= list_of_integers[middle + 1] and
+       list_of_integers[middle] >= list_of_integers[middle + 1]):
+        return list_of_integers[middle]
     if list_of_integers[middle + 1] > list_of_integers[middle]:
         new_arr = []
         new_arr = list_of_integers[middle + 1:len(list_of_integers)]
@@ -29,6 +31,3 @@ def find_peak(list_of_integers):
         new_arr = []
         new_arr = list_of_integers[middle - 1:0]
         return find_peak(new_arr)
-    if (list_of_integers[middle] >= list_of_integers[middle + 1] and
-       list_of_integers[middle] >= list_of_integers[middle + 1]):
-        return list_of_integers[middle]
