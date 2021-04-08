@@ -4,20 +4,25 @@
 
 def find_peak(list_of_integers):
     """ find_peak Time complexity: O(log(n))"""
-    return(find(list_of_integers, 0, len(list_of_integers) - 1))
+    # print("\nnew list\n")
+    if list_of_integers == []:
+        return None
+    else:
+        return(find(list_of_integers, 0, len(list_of_integers)))
 
 
 def find(prospects_arr, low, high):
     """
     prospects_arr: An array of numbers that could contain a peak number
     """
-    middle = int(low/high)
+    # print(prospects_arr)
+
+    middle = int(high/2)
+    # print(low, high)
     # print(str(prospects_arr) + " middle is: " + str(middle))
-    if len(prospects_arr) == 0:
-        return None
-    if len(prospects_arr) == 1:
-        return prospects_arr[0]
-    if len(prospects_arr) == 2:
+    if high == low == middle:
+        return prospects_arr[middle]
+    if high - low == 1:
         if prospects_arr[0] > prospects_arr[1]:
             return prospects_arr[0]
         else:
@@ -29,8 +34,8 @@ def find(prospects_arr, low, high):
     if prospects_arr[middle + 1] > prospects_arr[middle]:
         new_arr = []
         new_arr = prospects_arr[middle + 1:high]
-        return find(new_arr, middle + 1, high)
+        return find(new_arr, middle + 1, high - 1)
     if prospects_arr[middle - 1] > prospects_arr[middle]:
         new_arr = []
         new_arr = prospects_arr[middle - 1:0]
-        return find(new_arr, 0, middle)
+        return find(new_arr, 0, middle - 1)
