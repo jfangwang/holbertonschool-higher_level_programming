@@ -24,7 +24,9 @@ def find_peak(list_of_integers):
         nex = list_of_integers[index + 1]
         cur = list_of_integers[index]
         if ((pre <= cur) and (nex <= cur)):
-            if cur > peak
-            peak = cur
+            if peak is None:
+                peak = cur
+            if cur > peak:
+                peak = cur
         index += 1
     return str(peak)
