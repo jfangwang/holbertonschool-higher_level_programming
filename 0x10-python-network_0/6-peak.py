@@ -30,7 +30,7 @@ def find_peak(list_of_integers):
             nex = None
         cur = list_of_integers[index]
         if (pre is not None and nex is not None and
-            (pre <= cur) and (nex <= cur)):
+           (pre <= cur) and (nex <= cur)):
             if peak is None:
                 peak = cur
             if cur > peak:
