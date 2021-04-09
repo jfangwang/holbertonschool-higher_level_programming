@@ -8,13 +8,9 @@ if __name__ == "__main__":
     if len(argv) == 2:
         url = "http://0.0.0.0:5000/search_user"
         obj = {'q': q}
-        req = requests.post(url, obj)
         try:
-            req = requests.post(url, obj)
-            if "id" in req.__dict__ and name in req.__dict__:
-                print("["+str(req.get('id'))+"] "+str(req.get('name')))
-            else:
-                print("No result")
+            req = requests.post(url, data=obj).json()
+            print("["+str(req.get('id'))+"] "+str(req.get('name')))
         except:
             print("Not a valid JSON")
     else:
