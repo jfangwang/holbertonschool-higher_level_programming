@@ -13,6 +13,6 @@ if __name__ == "__main__":
         data = urllib.parse.urlencode(values)
         data = data.encode('ascii')
         req = urllib.request.Request(url, data)
-        with urllib.request.urlopen(url) as response:
+        with urllib.request.urlopen(req) as response:
             html = response.read()
-            print(html)
+            print(html.decode('utf-8'))
