@@ -9,7 +9,7 @@ request(url, function (error, response, body) {
     let count = 0;
     for (let a = 0; a < obj.results.length; a++) {
       for (let b = 0; b < obj.results[a].characters.length; b++) {
-        if (obj.results[a].characters[b] === 'https://swapi-api.hbtn.io/api/people/18') {
+        if (obj.results[a].characters[b].split('/')[5] === '18') {
           count += 1;
         }
       }
