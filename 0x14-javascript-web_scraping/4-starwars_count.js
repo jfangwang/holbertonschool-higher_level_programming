@@ -17,6 +17,6 @@ request(url, function (error, response, body) {
     }
     console.log(count);
   } catch (err) {
-    console.error('code:', error);
+    console.log(error);
   }
 });
