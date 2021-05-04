@@ -26,6 +26,7 @@ request(url, function (error, response, body) {
       }
     }
     dict[user] = TaskCount;
+    console.log(dict);
   }
-  console.log(dict);
+  
 });
