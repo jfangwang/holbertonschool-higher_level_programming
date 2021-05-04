@@ -1,19 +1,12 @@
 #!/usr/bin/node
 const url = process.argv[2];
+const file = process.argv[3];
 const request = require('request');
+const fs = require('fs');
 request(url, function (error, response, body) {
   if (error) {
     console.error(error);
   } else {
-    const obj = JSON.parse(body);
-    let count = 0;
-    for (let a = 0; a < obj.results.length; a++) {
-      for (let b = 0; b < obj.results[a].characters.length; b++) {
-        if (obj.results[a].characters[b] === 'https://swapi-api.hbtn.io/api/people/18/') {
-          count += 1;
-        }
-      }
-    }
-    console.log(count);
+    fs.writeFileSync(file, body, error);
   }
 });
