@@ -7,26 +7,11 @@ request(url, function (error, response, body) {
     console.error(error);
   } else {
     const obj = JSON.parse(body);
-    let user = obj[0].userId;
-    let TaskCount = 0;
     for (let a = 0; a < obj.length; a++) {
-      if (obj[a].userId === user) {
-        if (obj[a].completed === true) {
-          TaskCount += 1;
-        }
-      } else {
-        dict[user] = TaskCount;
-        user = obj[a].userId;
-        TaskCount = 0;
-        if (obj[a].userId === user) {
-          if (obj[a].completed === true) {
-            TaskCount += 1;
-          }
-        }
+      if (obj[a].completed === true) {
+        dict[obj[a].userId] = (dict[obj[a].userId] || 0) + 1;
       }
     }
-    dict[user] = TaskCount;
     console.log(dict);
   }
-  
 });
