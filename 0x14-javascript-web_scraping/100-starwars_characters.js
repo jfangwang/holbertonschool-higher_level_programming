@@ -12,10 +12,10 @@ const PeepList = ['https://swapi-api.hbtn.io/api/people/',
   'https://swapi-api.hbtn.io/api/people/?page=8',
   'https://swapi-api.hbtn.io/api/people/?page=9'
 ];
-function sleep(ms) {
+function sleep (ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-async function demo() {
+async function demo () {
   for (const a in PeepList) {
     url = PeepList[a];
     request(url, function (error, response, body) {
@@ -34,7 +34,7 @@ async function demo() {
         }
       }
     });
-    await sleep(10);
+    await sleep(100);
   }
 }
 demo();
