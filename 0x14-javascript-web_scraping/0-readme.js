@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const url = process.argv[2];
+const url = process.argv[1];
 const fs = require('fs');
 try {
   const data = fs.readFileSync(url, 'utf8');
